@@ -1,0 +1,63 @@
+.map {
+    width: 40vw;
+    height: 70vh;
+    background: rgba(217,217,217,1);
+    border-radius: 25px;
+    position: absolute;
+    right: 1vw;
+    top: 1vh;
+}
+
+.graph {
+    width: 98vw;
+    height: 25vh;
+    background: rgba(217,217,217,1);
+    border-radius: 25px;
+    position: absolute;
+    left: 1vw;
+    bottom: 1vh;
+}
+
+.button {
+    width: 8vw;
+    height: 6vh;
+    background: rgba(189,34,34,1);
+    border-radius: 25px;
+    position: absolute;
+    right: 2vw;
+    top: 63vh;
+}
+
+.info {
+    width: 55vw;
+    height: 61vh;
+    background: rgba(217,217,217,1);
+    border-radius: 25px;
+    position: absolute;
+    left: 1vw;
+    top: 10vh;
+}
+
+.onoff {
+    width: 8vh;
+    height: 8vh;
+    background: url("../images/onoff.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    left: 1vw;
+    top: 1vh;
+}
+
+.wifi {
+    width: 8vh;
+    height: 8vh;
+    background: url("../images/wifi.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    left: 51vw;
+    top: 1vh;
+}
