@@ -6,7 +6,7 @@ GRAPH_FILENAME = "graph.json"
 LIST_FILENAME = "list.json"
 INFO_FILENAME = "info.json"
 
-DATA_PATH = "/home/jemz/Desktop/RouterControl/data/"
+DATA_PATH = "/home/jemz/Desktop/RouterControl/docs/data/"
 
 GRAPH_PATH = DATA_PATH + GRAPH_FILENAME
 LIST_PATH = DATA_PATH + LIST_FILENAME
