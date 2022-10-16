@@ -4,10 +4,11 @@ GRAPH_FILENAME = "graph.json"
 LIST_FILENAME = "list.json"
 INFO_FILENAME = "info.json"
 
-def get_connected_devices():
-    devices = check_output(["arp", "-a"])
-    devices = devices.splitlines()
-    devices = [d.split()[0:2] for d in devices]
+def station_dump():
+    return check_output(["sudo", "iw", "dev", "wlan1", "station", "dump"])
+
+def device_mac_addresses(dump):
+    devices = dump.split("Station")
     return devices
 
 def main():
