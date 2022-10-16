@@ -3,36 +3,42 @@
     <head>
         <link href="./css/style.css" rel="stylesheet"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="js/info.js"></script>
+        <script src="js/list.js"></script>
         <script src="js/graph.js"></script>
-        <script src="js/wifi.js"></script>
-        <script src="js/onoff.js"></script>
         <script>
             function init() {
+                initInfo();
+                initList();
                 initGraph();
-                initWifi();
-                initControl();
             }
 
-            function update() {
-                updateGraph();
-            }
-
-            setInterval(update, 1000);
+            var wait = 1000;
+            // setInterval(updateInfo, wait/10);
+            setInterval(updateList, wait);
+            setInterval(updateGraph, wait);
         </script>
         <title>Router Control</title>
     </head>
     <body onload="init()">
-        <div class="map"></div>
+        <div class="slide">
+            <h3 id="rangeValue">0</h3>
+            <input type="range" class="range" value="0" min="0" max="100" step="1" onchange="updateSlide(this.value)">
+        </div>
+        <div class="info">
+            <h4>Representation Of Buffer Width</h4>
+            <canvas id="widChart" style="width: 100%;"></canvas>
+        </div>
+        <div class="list" id="divList">
+            <table id="listTable">
+                <tr>
+                    <td>MAC Address</td>
+                    <td>Signal Strength</td>
+                </tr>
+            </table>
+        </div>
         <div class="graph">
-            <canvas id="intChart" style="width: 100%; max-height: fit-content;"></canvas>
-        </div>
-        <div class="button"></div>
-        <div class="info"></div>
-        <div class="onoff" onclick="updateControl()">
-            <div id="onoff" class="status"></div>
-        </div>
-        <div class="wifi" onclick="updateWifi()">
-            <div id="wifi" class="status"></div>
+            <canvas id="intGraph" style="width: 100%; max-height: fit-content;"></canvas>
         </div>
     </body>
 </html>

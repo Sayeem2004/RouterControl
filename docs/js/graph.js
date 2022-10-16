@@ -1,13 +1,15 @@
-var xValues, yValues, intChart;
+var xValues, yValues, intGraph, intensity = NaN;
 
 function initGraph() {
     xValues = [];
     yValues = [];
+
     for (var i = 0; i < 12; i++) {
         xValues.push(-11+i);
         yValues.push(NaN);
     }
-    intChart = new Chart("intChart", {
+
+    intGraph = new Chart("intGraph", {
         type: "line",
         data: {
             labels: xValues,
@@ -30,15 +32,19 @@ function initGraph() {
 }
 
 function updateGraph() {
-    intensity = getIntensity(wifiAvailable);
+    getIntensity();
+
     yValues.shift();
     yValues.push(intensity);
-    intChart.data.datasets[0].data = yValues;
-    intChart.update();
+
+    intGraph.data.datasets[0].data = yValues;
+    intGraph.update();
 }
 
 function getIntensity() {
-    // Update with intensity with backend here
-    if (wifiAvailable) return Math.floor(Math.random() * 100);
-    else return NaN;
+    fetch("../../data/graph.json")
+        .then(response => response.json())
+        .then(data => {
+            intensity = Math.min(Math.max(parseFloat(data.graph), 0.0), 100.0);
+        });
 }
