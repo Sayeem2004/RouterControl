@@ -22,21 +22,19 @@
     </head>
     <body onload="init()">
         <div class="slide">
-            <input type="range" id="" value="0" min="0" max="100" step="1" onchange="updateSlide(this.value)">
+            <h3 id="rangeValue">0</h3>
+            <input type="range" class="range" value="0" min="0" max="100" step="1" onchange="updateSlide(this.value)">
         </div>
         <div class="info">
             <h4>Representation Of Buffer Width</h4>
             <canvas id="widChart" style="width: 100%;"></canvas>
         </div>
-        <div class="list">
+        <div class="list" id="divList">
             <table id="listTable">
-                <!-- <tr>
-                    <th>IP</th>
-                    <th>MAC</th>
-                    <th>Hostname</th>
-                    <th>Vendor</th>
-                    <th>Signal</th>
-                </tr> -->
+                <tr>
+                    <td>MAC Address</td>
+                    <td>Signal Strength</td>
+                </tr>
             </table>
         </div>
         <div class="graph">

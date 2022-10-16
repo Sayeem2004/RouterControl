@@ -4,6 +4,7 @@ function initInfo() {
     widChart = document.getElementById("widChart");
     ctx = widChart.getContext("2d");
     render();
+    updateSlide(0);
     updateInfo();
 }
 
@@ -74,5 +75,13 @@ function getObjectFitSize(contains, containerWidth, containerHeight, width, heig
 }
 
 function updateSlide(value) {
-
+    document.getElementById("rangeValue").innerHTML = value;
+    // var obj = {
+    //     "info" : value
+    // };
+    // var json = JSON.stringify(obj, null, 4);
+    // fetch("../../data/info.json", {method: 'POST', body: json})
+    //     .then(response => response.json())
+    //     .then(success => console.log(success));
+    updateInfo();
 }
