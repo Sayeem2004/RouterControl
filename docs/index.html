@@ -2,14 +2,37 @@
 <html>
     <head>
         <link href="./css/style.css" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="js/graph.js"></script>
+        <script src="js/wifi.js"></script>
+        <script src="js/onoff.js"></script>
+        <script>
+            function init() {
+                initGraph();
+                initWifi();
+                initControl();
+            }
+
+            function update() {
+                updateGraph();
+            }
+
+            setInterval(update, 1000);
+        </script>
         <title>Router Control</title>
     </head>
-    <body>
+    <body onload="init()">
         <div class="map"></div>
-        <div class="graph"></div>
+        <div class="graph">
+            <canvas id="intChart" style="width: 100%; max-height: fit-content;"></canvas>
+        </div>
         <div class="button"></div>
         <div class="info"></div>
-        <div class="onoff"></div>
-        <div class="wifi"></div>
+        <div class="onoff" onclick="updateControl()">
+            <div id="onoff" class="status"></div>
+        </div>
+        <div class="wifi" onclick="updateWifi()">
+            <div id="wifi" class="status"></div>
+        </div>
     </body>
 </html>
