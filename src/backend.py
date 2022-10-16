@@ -68,8 +68,8 @@ def loop():
     ms = max_signal(devices)
     
     movement_width = 0
-    with open(INFO_PATH, 'w') as f:
-        s = json.loads(f)
+    with open(INFO_PATH, 'r') as f:
+        s = json.loads(f.read())
         movement_width = s['info']
 
     intensity = intensity_from_max_signal(ms)
