@@ -1,82 +1,55 @@
-.map {
-    width: 40vw;
-    height: 70vh;
+.slide {
+    width: 49.25vw;
+    height: 9.5vh;
     background: rgba(217,217,217,1);
     border-radius: 10px;
     position: absolute;
-    right: 1vw;
-    top: 1vh;
-}
-
-.graph {
-    width: 98vw;
-    height: 25vh;
-    background: rgba(217,217,217,1);
-    border-radius: 10px;
-    position: absolute;
-    left: 1vw;
-    bottom: 1vh;
-}
-
-.button {
-    width: 8vw;
-    height: 6vh;
-    background: rgba(189,34,34,1);
-    border-radius: 10px;
-    position: absolute;
-    right: 2vw;
-    top: 63vh;
-}
-
-.button:hover {
-    opacity: 50%;
+    left: 0.5vw;
+    top: 0.5vh;
 }
 
 .info {
-    width: 55vw;
-    height: 61vh;
+    width: 49.25vw;
+    height: 50.5vh;
     background: rgba(217,217,217,1);
     border-radius: 10px;
     position: absolute;
-    left: 1vw;
-    top: 10vh;
+    left: 0.5vw;
+    top: 10.5vh;
 }
 
-.onoff {
-    width: 8vmin;
-    height: 8vmin;
-    background: url("../images/onoff.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    position: absolute;
-    left: 1vw;
-    top: 1vh;
-}
-
-.onoff:hover {
-    opacity: 50%;
-}
-
-.wifi {
-    width: 8vmin;
-    height: 8vmin;
-    background: url("../images/wifi.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    position: absolute;
-    left: 51vw;
-    top: 1vh;
-}
-
-.wifi:hover {
-    opacity: 50%;
-}
-
-.status {
-    width: 8vmin;
-    height: 8vmin;
+.list {
+    width: 49.25vw;
+    height: 60.5vh;
+    background: rgba(217,217,217,1);
     border-radius: 10px;
-    opacity: 50%;
+    position: absolute;
+    right: 0.5vw;
+    top: 0.5vh;
+}
+
+.graph {
+    width: 99vw;
+    height: 38vh;
+    background: rgba(217,217,217,1);
+    border-radius: 10px;
+    position: absolute;
+    left: 0.5vw;
+    right: 0.5vw;
+    bottom: 0.5vh;
+}
+
+canvas {
+    display: block;
+    object-fit: contain;
+    margin: 0px;
+}
+
+h4 {
+    font-size: 3vmin;
+    font-weight: 500;
+    color: rgba(0,0,0,1);
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 0.5vh;
 }
