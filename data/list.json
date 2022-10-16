@@ -1,10 +1,1 @@
-[
-    {
-        "MAC" : "AB-CD-EF-GH-IJ-KL",
-        "signal" : "0"
-    },
-    {
-        "MAC" : "AB-CD-EF-GH-IJ-KL",
-        "signal" : "0"
-    }
-]
+[{"MAC": "74:8f:3c:c1:8d:87", "signal": "-30 dBm"}]

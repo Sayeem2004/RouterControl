@@ -42,7 +42,7 @@ function updateGraph() {
 }
 
 function getIntensity() {
-    fetch("../../data/graph.json")
+    fetch("/home/jemz/Desktop/RouterControl/data/graph.json")
         .then(response => response.json())
         .then(data => {
             intensity = Math.min(Math.max(parseFloat(data.graph), 0.0), 100.0);
