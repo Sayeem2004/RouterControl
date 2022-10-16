@@ -27,7 +27,7 @@ function updateList() {
 }
 
 function getList() {
-    fetch("/home/jemz/Desktop/RouterControl/data/list.json")
+    fetch("../../data/list.json")
         .then(response => response.json())
         .then(data => {
             list = data;
