@@ -1,4 +1,4 @@
-var xValues, yValues, intGraph, intensity;
+var xValues, yValues, intGraph, intensity = NaN;
 
 function initGraph() {
     xValues = [];
@@ -42,9 +42,9 @@ function updateGraph() {
 }
 
 function getIntensity() {
-    return fetch("../../data/graph.json")
+    fetch("../../data/graph.json")
         .then(response => response.json())
         .then(data => {
-            intensity = Math.min(Math.max(data.graph, 0.0), 100.0);
+            intensity = Math.min(Math.max(parseFloat(data.graph), 0.0), 100.0);
         });
 }

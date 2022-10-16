@@ -1,30 +1,30 @@
-var widChart, ctx, width;
+var widChart, ctx, myWidth ;
 
 function initInfo() {
     widChart = document.getElementById("widChart");
-    render();
-
     ctx = widChart.getContext("2d");
+    render();
     updateInfo();
 }
 
 function updateInfo() {
-    width = getWidth();
+    getWidth();
     var outer = Math.min(widChart.width, widChart.height) / 2;
-    var inner = outer - (width / 100.0 * outer);
+    var inner = outer - ((myWidth / 100.0) * outer);
     drawCircle(outer, inner);
 }
 
 function drawCircle(outer, inner) {
     var cx = widChart.width / 2, cy = widChart.height / 2;
+    ctx.clearRect(0, 0, widChart.width, widChart.height)
 
-    ctx.lineWidth = outer-inner;
+    ctx.lineWidth = Math.max(outer - inner, 1.0);
     ctx.lineCap = 'butt';
     ctx.strokeStyle = 'blue';
     ctx.globalAlpha = 0.50;
 
     ctx.beginPath();
-    ctx.arc(cx, cy, inner, 0, 2*Math.PI);
+    ctx.arc(cx, cy, (outer + inner) / 2, 0, 2 * Math.PI);
     ctx.stroke();
 }
 
@@ -32,7 +32,7 @@ function getWidth() {
     fetch("../../data/info.json")
         .then(response => response.json())
         .then(data => {
-            console.log(Math.min(Math.max(data.info, 0.0), 100.0));
+            myWidth = Math.min(Math.max(parseFloat(data.info), 0.0), 100.0);
         }
     );
 }
@@ -71,4 +71,8 @@ function getObjectFitSize(contains, containerWidth, containerHeight, width, heig
         x: (containerWidth - targetWidth) / 2,
         y: (containerHeight - targetHeight) / 2
     };
+}
+
+function updateSlide(value) {
+
 }

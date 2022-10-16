@@ -14,7 +14,7 @@
             }
 
             var wait = 1000;
-            // setInterval(updateInfo, wait);
+            setInterval(updateInfo, wait/10);
             setInterval(updateList, wait);
             setInterval(updateGraph, wait);
         </script>
@@ -22,7 +22,7 @@
     </head>
     <body onload="init()">
         <div class="slide">
-
+            <input type="range" id="" value="0" min="0" max="100" step="1" onchange="updateSlide(this.value)">
         </div>
         <div class="info">
             <h4>Representation Of Buffer Width</h4>
