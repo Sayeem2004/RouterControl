@@ -5,11 +5,12 @@ function initInfo() {
     ctx = widChart.getContext("2d");
     render();
     updateSlide(0);
-    updateInfo();
+    updateInfo(false, 0);
 }
 
-function updateInfo() {
-    getWidth();
+function updateInfo(set, value) {
+    if (!set) getWidth();
+    else myWidth = value;
     var outer = Math.min(widChart.width, widChart.height) / 2;
     var inner = outer - ((myWidth / 100.0) * outer);
     drawCircle(outer, inner);
@@ -74,6 +75,7 @@ function getObjectFitSize(contains, containerWidth, containerHeight, width, heig
     };
 }
 
+// This function was originally supposed to write to the JSON file in the data folder, but that required the use of node, and due to hardware limitations on the raspberry pi, we were unable to do that. So instead, we made a makeshift function that can still get the job of explaining done during the presentation, but doesn't do the complete job.
 function updateSlide(value) {
     document.getElementById("rangeValue").innerHTML = value;
     // var obj = {
@@ -83,5 +85,5 @@ function updateSlide(value) {
     // fetch("../../data/info.json", {method: 'POST', body: json})
     //     .then(response => response.json())
     //     .then(success => console.log(success));
-    updateInfo();
+    updateInfo(true, value);
 }
